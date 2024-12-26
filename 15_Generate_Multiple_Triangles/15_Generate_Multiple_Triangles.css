@@ -1,0 +1,56 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+}
+
+#container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center; /* Center the canvas horizontally */
+    align-items: center; /* Center the canvas vertically */
+}
+
+canvas {
+    flex: 0; /* No extra space is taken */
+    width: 800px; /* Adjust width as needed */
+    height: 800px; /* Adjust height as needed */
+    background-color: #000000; /* Black background for the canvas */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers the inputs vertically */
+    align-items: flex-end; /* Aligns inputs to the right */
+    padding: 20px; /* Adds some padding */
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: background color for the form */
+    color: black; /* Ensure the text color is black */
+    font-family: Arial, sans-serif; /* Optional: set a clean font */
+}
+
+input {
+    margin: 5px 0; /* Adds some spacing between inputs */
+}
+
+input[type="range"] {
+    width: 200px; /* Adjust width of the sliders */
+}
+
+button {
+    margin-left: 10px; /* Add some space between buttons */
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Adjusts spacing between buttons */
+    margin-top: 10px; /* Add some space above the buttons */
+}
+
+label {
+    margin-right: 10px; /* Adds spacing between label and input */
+    font-size: 14px; /* Ensure the label text is visible */
+    font-weight: bold; /* Make labels stand out */
+}

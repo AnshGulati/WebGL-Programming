@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGL - Generate Multiple Triangles</title>
+    <link rel="stylesheet" href="15_Generate_Multiple_Triangles.css">
+</head>
+
+<body>
+    <div id="container">
+        <canvas></canvas>
+        <form>
+            <label for="rInput">Red (R):</label>
+            <input type="range" id="rInput" min="0" max="255" step="1">
+
+            <label for="gInput">Green (G):</label>
+            <input type="range" id="gInput" min="0" max="255" step="1">
+
+            <label for="bInput">Blue (B):</label>
+            <input type="range" id="bInput" min="0" max="255" step="1">
+
+            <div class="button-container">
+                <button type="button" onclick="resetCanvas()" id="resetButton">Reset</button>
+                <button type="button" onclick="main()">Generate</button>
+            </div>
+        </form>
+
+        <form>
+            <label for="X1">X1</label>
+            <input type="text" id="X1">
+            <label for="Y1">Y1</label>
+            <input type="text" id="Y1">
+
+            <label for="X2">X2</label>
+            <input type="text" id="X2">
+            <label for="Y2">Y2</label>
+            <input type="text" id="Y2">
+
+            <label for="X3">X3</label>
+            <input type="text" id="X3">
+            <label for="Y3">Y3</label>
+            <input type="text" id="Y3">
+    </div>
+    </form>
+
+    </div>
+
+    <script src="15_Generate_Multiple_Triangles.js"></script>
+</body>
+
+</html>

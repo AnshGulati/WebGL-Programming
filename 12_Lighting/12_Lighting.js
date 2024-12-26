@@ -11,7 +11,6 @@ function main() {
 
     let points = []; // Array to hold the vertex positions
     let colors = []; // Array to hold the vertex colors
-    // let normals = [];
 
     // Define the vertices of the cube
     const vertexData = [
@@ -50,10 +49,6 @@ function main() {
     const cBuffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, cBuffer);
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colors), gl.STATIC_DRAW);
-
-    // const nBuffer = gl.createBuffer();
-    // gl.bindBuffer(gl.ARRAY_BUFFER, nBuffer);
-    // gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(normals), gl.STATIC_DRAW);
 
     // Create & Compile Vertex Shader
     const vertexShader = gl.createShader(gl.VERTEX_SHADER);
@@ -191,31 +186,11 @@ function main() {
     // Function to create a quad by connecting four vertices
     function quad(a, b, c, d) {
         const indices = [a, b, c, a, c, d]; // Define two triangles that form a quad
-        // const t1 = subtract(vertexData.slice(3, 6), vertexData.slice(0, 3));
-        // const t2 = subtract(vertexData.slice(6, 9), vertexData.slice(3, 6));
-        // const normal = normalize(cross(t1, t2));
-
         for (let i = 0; i < indices.length; ++i) {
             // Push the vertex position and color data for each triangle vertex
             points.push(vertexData[3 * indices[i]], vertexData[3 * indices[i] + 1], vertexData[3 * indices[i] + 2]);
             colors.push(vertexColors[4 * indices[i]], vertexColors[4 * indices[i] + 1], vertexColors[4 * indices[i] + 2], vertexColors[4 * indices[i] + 3]);
-            // normals.push(normal[0], normal[1], normal[2]);
         }
-    }
-
-    function subtract(a, b) {
-        return [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
-    }
-
-    function cross(a, b) {
-        return [a[1] * b[2] - a[2] * b[1],
-        a[2] * b[0] - a[0] * b[2],
-        a[0] * b[1] - a[1] * b[0]];
-    }
-
-    function normalize(v) {
-        const length = Math.sqrt(v[0] * v[0] + v[1] * v[1] + v[2] * v[2]);
-        return [v[0] / length, v[1] / length, v[2] / length];
     }
 }
 
